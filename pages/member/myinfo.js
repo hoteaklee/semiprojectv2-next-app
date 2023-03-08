@@ -1,4 +1,4 @@
-const myinfo = () => {
+const Myinfo = () => {
     return (
         <div>
             <h2>회원정보</h2>
@@ -26,4 +26,4 @@ const myinfo = () => {
     );
 };
 
-export default myinfo;
+export default Myinfo;
