@@ -1,6 +1,14 @@
-const List = () => {
+
+List.getInitialProps = async function(ctx){
+    const res = await fetch('http://localhost:3000/api/board/list');
+    const board = await res.json();
+
+    return { board : board }
+}
+
+export default function List(props) {
     return (
-        <div>
+        <main>
             <h2>게시판</h2>
             <table className="board">
                 <colgroup>{/*각 컬럼에 디자인 적용*/}
@@ -23,146 +31,17 @@ const List = () => {
                     <th>작성일</th>
                     <th>조회</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>15</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>16</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>17</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>18</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>19</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>20</td>
-                    <td>시간은 금이라구, 친구!, 진짜라구, 친구, 정말이라구, 친구, 사실이라구, 친구!</td>
-                    <td>zzyzzy</td>
-                    <td>2022-12-10</td>
-                    <td>123</td>
-                </tr>
+                {props.board.map(bd => (
+                    <tr key={bd.bno}>
+                        <td>{bd.bno}</td>
+                        <td>{bd.title}</td>
+                        <td>{bd.userid}</td>
+                        <td>{bd.regdate}</td>
+                        <td>{bd.views}</td>
+                    </tr>
+                ))}
+
+
                 </tbody>
             </table>
 
@@ -180,8 +59,6 @@ const List = () => {
                 <li>10</li>
                 <li>다음</li>
             </ul>
-        </div>
+        </main>
     );
-};
-
-export default List;
+}
