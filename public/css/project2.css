@@ -24,6 +24,7 @@ form input { padding: 5px }
 button { padding: 5px 7px }
 
 /* 새글쓰기, 본문보기 */
+#writeFrm{widte: 560px }
 .drgup { vertical-align: top }
 
 /* 회원정보 */
