@@ -54,9 +54,14 @@ export async function getServerSideProps(ctx) {
     // 페이지 네이션 처리 2
     let pgn = getPgns(cpg, alpg);
 
+    // 검색시 검색관련 질의문자열 생성
+    let qry = fkey ? `&ftype=${ftype}&fkey=${fkey}` : '';
+
     // 처리 결과를 boards 객체에 추가
     boards.stpgns = stpgns;
     boards.pgn = pgn;
+    boards.qry = qry;
+
 
     return { props : {boards} }
 }
@@ -92,10 +97,10 @@ export default function List( {boards} ) {
                         </select>
                         <input type="text" name="fkey" id="fkey" onChange={handlekey} />
                             <button type="button" id="findbtn" onClick={handlefind}>검색하기</button>
-                                </td>
-                                <td colspan="2" className="alignrgt">
-                                <button type="button"  id="newbtn" >새글작성</button></td>
-                    </tr>
+                    </td>
+                    <td colspan="2" className="alignrgt">
+                     <button type="button"  id="newbtn" >새글작성</button></td>
+                </tr>
                 <tr>
                     <th>번호</th>
                     <th>제목</th>
@@ -119,23 +124,23 @@ export default function List( {boards} ) {
 
             <ul className="pagenation">
                 {boards.pgn.isprev ?
-                    <li><a href={`?cpg=${boards.pgn.prev}`}>이전</a></li> : ''}
+                    <li><a href={`?cpg=${boards.pgn.prev}${boards.qry}`}>이전</a></li> : ''}
 
                 {boards.pgn.isprev10 ?
-                    <li><a href={`?cpg=${boards.pgn.prev10}`}>이전10</a></li> : ''}
+                    <li><a href={`?cpg=${boards.pgn.prev10}${boards.qry}`}>이전10</a></li> : ''}
 
                 {boards.stpgns.map(pgn => (
                     // 사망 연사자 (조건) ? 참 : 거짓
                     pgn.iscpg ?
                     <li key={pgn.num} className='cpage'>{pgn.num}</li> :
-                    <li key={pgn.num}><a href={`?cpg=${pgn.num}`}>{pgn.num}</a></li>
+                    <li key={pgn.num}><a href={`?cpg=${pgn.num}${boards.qry}`}>{pgn.num}</a></li>
                 ))}
 
                 {boards.pgn.isnext10 ?
-                    <li><a href={`?cpg=${boards.pgn.next10}`}>다음10</a></li> : ''}
+                    <li><a href={`?cpg=${boards.pgn.next10}${boards.qry}`}>다음10</a></li> : ''}
 
                 {boards.pgn.isnext ?
-                    <li><a href={`?cpg=${boards.pgn.next}`}>다음</a></li> : ''}
+                    <li><a href={`?cpg=${boards.pgn.next}${boards.qry}`}>다음</a></li> : ''}
             </ul>
         </main>
     );
