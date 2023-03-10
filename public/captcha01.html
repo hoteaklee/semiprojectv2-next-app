@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>구글 recaptcha</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+<h1>구글 recaptcha</h1>
+<ul>
+    <li>구글 recaptcha 이미지를 클릭하면 사이트키를 이용한 고유키를 하나 생성해 줌</li>
+    <li>구글 recaptcha 인증사이트에 비킬키와 이 키를 질의문자열로 보내
+        올바른 키인지 확인하고 결과를 json으로 받아옴</li>
+    <li>받아온 json 데이터에서 success 키가 true 인지 확인</li>
+</ul>
+<form action="?" method="POST">
+    <div class="g-recaptcha" data-sitekey=""></div>
+    <br/>
+    <input type="button" value="checkme"  onclick="return check_recaptcha()">
+</form>
+<script>
+    async function check_recaptcha() {
+        //alert('클릭'+ grecaptcha.getResponse());
+        //console.log(grecaptcha.getResponse());
+
+        let url = 'https://www.google.com/recaptcha/api/siteverify';
+        let sitekey = '';
+        let params = '?secret=' + sitekey;
+        params += '&response=' + grecaptcha.getResponse();
+        url = url + params;
+        console.log(url)
+
+        // const result = await fetch(url, {mode: 'no-cors'})
+        //     .then((response) => response.json()).then((data) => console.log(data[0]));
+        //alert(await result);
+        //return false;
+
+        window.open(url);
+    }
+
+
+</script>
+</body>
+</html>
