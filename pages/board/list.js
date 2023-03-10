@@ -91,7 +91,11 @@ export default function List( {boards} ) {
             </table>
 
             <ul className="pagenation">
-                <li className="prev">이전</li>
+                {boards.pgn.isprev ?
+                    <li><a href={`?cpg=${boards.pgn.prev}`}>이전</a></li> : ''}
+
+                {boards.pgn.isprev10 ?
+                    <li><a href={`?cpg=${boards.pgn.prev10}`}>이전10</a></li> : ''}
 
                 {boards.stpgns.map(pgn => (
                     // 사망 연사자 (조건) ? 참 : 거짓
@@ -100,7 +104,11 @@ export default function List( {boards} ) {
                     <li key={pgn.num}><a href={`?cpg=${pgn.num}`}>{pgn.num}</a></li>
                 ))}
 
-                <li>다음</li>
+                {boards.pgn.isnext10 ?
+                    <li><a href={`?cpg=${boards.pgn.next10}`}>다음10</a></li> : ''}
+
+                {boards.pgn.isnext ?
+                    <li><a href={`?cpg=${boards.pgn.next}`}>다음</a></li> : ''}
             </ul>
         </main>
     );
