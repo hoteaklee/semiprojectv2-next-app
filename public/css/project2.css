@@ -24,7 +24,7 @@ form input { padding: 5px }
 button { padding: 5px 7px }
 
 /* 새글쓰기, 본문보기 */
-#writeFrm{widte: 560px }
+#writeFrm {width: 560px }
 .drgup { vertical-align: top }
 
 /* 회원정보 */
@@ -54,14 +54,22 @@ button { padding: 5px 7px }
 .cpage { font: bold 48px '맑은 고딕'; color: red }
 .prev { color: #cccccc }
 
+select { padding: 3.3px }
+input[type="text"] { padding: 5px }
+
+.active {
+        background-color: #0099FF; color: white !important;
+        padding: 15px 30px
+}
+
 /*홈 화면 그림*/
 .logo { padding: 50px 110px ; width: 75% }
 
 /* view */
 #view { width: 700px; margin: 0 auto; }
-label { display: inline-block; width: 110px;
+#view label { display: inline-block; width: 110px;
         text-align: right; font-weight: bold;
         margin-left: 5px; }
-#contents {border: 1px solid #eeeeee; display: inline-block;
+#view #contents {border: 1px solid #eeeeee; display: inline-block;
         width: 560px; min-height: 350px;
         white-space: pre } /*white-space: pre  줄바꿈 표시~*/
