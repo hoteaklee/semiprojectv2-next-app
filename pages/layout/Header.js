@@ -6,7 +6,7 @@ const Header = () => {
             <nav>
                 <ul>
                     <li><Link href="/">Home</Link></li>
-                    <li><Link href="/member/join">회원가입</Link></li>
+                    <li><a href="/member/join">회원가입</a></li>
                     <li><Link href="/member/login">로그인</Link></li>
                     <li><Link href="/board/list">게시판</Link></li>
                     <li><Link href="/member/myinfo">회원정보</Link></li>
