@@ -27,12 +27,12 @@ export default function Update({board}){
 
     const [title, setTitle] = useState(board.title);
     const [userid,setUserid ] = useState('hoteak');
-    const [contents,setContents ] = useState(board.title);
+    const [contents,setContents ] = useState(board.contents);
 
     const handleupdate = async () => {
         if (grecaptcha.getResponse() && await check_captcha(grecaptcha.getResponse())) {
             let data = {bno:board.bno, title: title, contents: contents};
-            if ((await process_submit('/api/board/update',data)).cnt > 0) {
+            if (await process_submit('/api/board/update',data) > 0) {
                 location.href = '/board/view?bno='+ board.bno;
             } else {
                 alert('! !');
