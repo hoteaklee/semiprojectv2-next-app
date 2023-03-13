@@ -73,3 +73,7 @@ input[type="text"] { padding: 5px }
 #view #contents {border: 1px solid #eeeeee; display: inline-block;
         width: 560px; min-height: 350px;
         white-space: pre } /*white-space: pre  줄바꿈 표시~*/
+
+/* recaptcha 이미지 */
+.cap{ display:inline-flex; padding: 0;
+        margin: -15px 0 0 -10px;}

@@ -12,6 +12,7 @@ const Layout = ({children}) => {
                         <link rel="stylesheet" href="/css/main.css"/>
                             <link rel="stylesheet" href="/css/project2.css"/>
 
+
         </head>
         <body>
         <div id="wrapper">
