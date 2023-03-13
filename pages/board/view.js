@@ -17,7 +17,7 @@ export default function View({board}){
     const upsateOne = () => {location.href = `/board/update?bno=${board.bno}`; };
     const deleteOne = () => {
         if (confirm('정말 삭제하시겠습니까??'))
-        location.href = `/board/delete?bno=${board.bno}`;};
+        location.href = `/api/board/delete?bno=${board.bno}`;};
     return(
 
         <main>
