@@ -1,10 +1,10 @@
-import {AxiosHeaders as Board} from "axios";
+import Board from "../../../models/Board";
 
 export default async (req,res) => {
     const {bno}= req.query;
 
     try {
-        const cnt = new Board().delete(bno).then(result=>result);
+         new Board().delete(bno).then(result=>result);
 
         //res.status(200).json({'cnt':await cnt});
         res.redirect(301, '/board/list');
