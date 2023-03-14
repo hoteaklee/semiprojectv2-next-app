@@ -4,7 +4,7 @@ let membersql = {
     insertsql : ' insert into member (userid, passwd, name, email) ' +
         '  values ( ?, ?, ?, ?) ',
 
-    loginsql : ' select count(userid) cnt from member where userid = ? and passwd = ? ',
+    loginsql : ' select count(userid) cnt, name, email from member where userid = ? and passwd = ? ',
 
     selectOne: ` select mno, userid, name, email, `+
                     ` date_format(regdate, "%Y-%m-%d %H:%i:%s") regdate ` +
@@ -38,9 +38,9 @@ class Member{
         return result
     }
 
-    async login (uid, passwd) {     // 로그인 처리
+    async login (userid, passwd) {     // 로그인 처리
         let conn = null;
-        let params = [uid, passwd];
+        let params = [userid, passwd];
         let result= -1;
 
         try { conn = await mariadb.makeConn();
