@@ -21,6 +21,7 @@
   "devDependencies": {
     "bcrypt": "^5.1.0",
     "eslint": "7.23.0",
-    "eslint-config-next": "10.2.3"
+    "eslint-config-next": "10.2.3",
+    "next-auth": "^3.29.10"
   }
 }
