@@ -51,7 +51,7 @@ class Member{
         return result;
     }
 
-    async selectOne (uid) {     // 아이디로 겸색된 회원의 모든 정보 조회
+    async selectOne (uid) {     // 아이디로 겸색된 회원의 모든 정보 조회(myinfo)
         let conn = null;
         let params = [uid];
         let result = -1;

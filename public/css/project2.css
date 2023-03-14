@@ -16,7 +16,7 @@ hr { background: black; height: 2px; }
 .copy { text-align: center }
 
 /* 회원가입, 로그인 */
-form { width: 320px; margin: 0 auto; vertical-align: middle }
+form { width: 350px; margin: 0 auto; vertical-align: middle }
 div { padding: 5px }
 form label { display: inline-block; width: 110px;
         text-align: right; font-weight: bold }
@@ -76,4 +76,4 @@ input[type="text"] { padding: 5px }
 
 /* recaptcha 이미지 */
 .cap{ display:inline-flex; padding: 0;
-        margin: -15px 0 0 -10px;}
+        margin: -10px 0 0 -10px; width: 200px;}

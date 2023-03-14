@@ -20,7 +20,7 @@ export default function Join() {
     };
     return (
         <main>
-            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+            <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
             <h2>회원가입</h2>
             <form name="join">
                 <div><label htmlFor="uid">아이디</label>
@@ -36,6 +36,7 @@ export default function Join() {
 
                 <div><label></label>
                     <div className="g-recaptcha cap" data-sitekey="6Lc_4OskAAAAAB0qqZMfQQMY6JZLNjePv1nSMSGy"></div>
+                    {/*<div className="g-recaptcha cap" data-sitekey={process.env.SITE_KEY}></div>*/}
                 </div>
 
                 <div><label></label>
